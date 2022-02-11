@@ -1,0 +1,34 @@
+<main class="categories">
+  <div class="container categories_container">
+    <div class="breadcumb">
+      <a class="breadcumb_link" href="/"><span>Trang chủ</span></a>
+
+      <span class="breadcumb_sup">/</span>
+      <% for(cate of nameCate) {%>
+      <a class="breadcumb_link" href="/categories/<%=cate.id%>"
+        ><span><%=cate.name%></span></a
+      >
+      <% } %>
+    </div>
+    <h1><%=page_name%></h1>
+    <div class="product_list">
+      <% for(sp of listSp) {%>
+      <div class="product_item">
+        <span class="product_price--discount">-25%</span>
+        <div class="product_img">
+          <a href="/product/<%=sp.id%>"
+            ><img src="<%=sp.image%>" alt="<%=sp.name%>"
+          /></a>
+        </div>
+        <div class="product_name">
+          <a href="#"><p><%=sp.name%></p></a>
+        </div>
+        <div class="product_price">
+          <span class="text-red"><%=sp.price%>đ</span
+          ><span class="text-gray">2,239,000đ</span>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</main>

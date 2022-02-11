@@ -1,0 +1,125 @@
+<main class="home">
+  <article class="home_banner">
+    <img src="/images/banner1.jpg" alt="" />
+  </article>
+
+  <article class="home_content">
+    <div class="container content">
+      <div class="content_title">
+        <h1>Sản phẩm giày nổi bật</h1>
+        <a href="#" class="content_sup">
+          <span>Xem thêm</span>
+        </a>
+      </div>
+
+      <div class="product_list">
+        <% for(sp of listSp) {%>
+        <div class="product_item">
+          <span class="product_price--discount">-25%</span>
+          <div class="product_img">
+            <a href="/product/<%=sp.id%>"
+              ><img src="<%=sp.image%>" alt="<%=sp.name%>"
+            /></a>
+          </div>
+          <div class="product_name">
+            <a href="#"><p><%=sp.name%></p></a>
+          </div>
+          <div class="product_price">
+            <span class="text-red"><%=sp.price%>đ</span
+            ><span class="text-gray">2,239,000đ</span>
+          </div>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </article>
+
+  <article class="home_content post_content">
+    <div class="container post">
+      <div class="content_title">
+        <h1>Bài viết mới nhất</h1>
+      </div>
+
+      <div class="post_list">
+        <div class="post_item">
+          <div class="post_img">
+            <a><img src="/images/jd-2.jfif" alt="" /></a>
+          </div>
+          <div class="post_time">
+            <span>Thứ ba 06/10/2021</span>
+          </div>
+          <div class="post_title">
+            <p>Replica là gì ? Phân biệt hàng Replica , Fake và ...</p>
+          </div>
+          <div class="post_detail">
+            <p>
+              Hàng replica là hàng gì? Khác với hàng Authentic ra sao? Luôn là
+              những thắc mắc chưa hồi đáp của nhiều bạn hiện nayBởi đối với thị
+              trường giày thật...
+            </p>
+          </div>
+        </div>
+        <div class="post_item">
+          <div class="post_img">
+            <a><img src="/images/final_nike_poster.jpg" alt="" /></a>
+          </div>
+          <div class="post_time">
+            <span>Thứ ba 06/10/2021</span>
+          </div>
+          <div class="post_title">
+            <p>Replica là gì ? Phân biệt hàng Replica , Fake và ...</p>
+          </div>
+          <div class="post_detail">
+            <p>
+              Hàng replica là hàng gì? Khác với hàng Authentic ra sao? Luôn là
+              những thắc mắc chưa hồi đáp của nhiều bạn hiện nayBởi đối với thị
+              trường giày thật...
+            </p>
+          </div>
+        </div>
+        <div class="post_item">
+          <div class="post_img">
+            <a><img src="/images/banner-quang-cao-giay-12.png" alt="" /></a>
+          </div>
+          <div class="post_time">
+            <span>Thứ ba 06/10/2021</span>
+          </div>
+          <div class="post_title">
+            <p>Replica là gì ? Phân biệt hàng Replica , Fake và ...</p>
+          </div>
+          <div class="post_detail">
+            <p>
+              Hàng replica là hàng gì? Khác với hàng Authentic ra sao? Luôn là
+              những thắc mắc chưa hồi đáp của nhiều bạn hiện nayBởi đối với thị
+              trường giày thật... Hàng replica là hàng gì? Khác với hàng
+              Authentic ra sao? Luôn là những thắc mắc chưa hồi đáp của nhiều
+              bạn hiện nayBởi đối với thị trường giày thật...
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="sneaker_form">
+    <div class="form_register">
+      <div class="register_title">
+        <h2>Đăng ký</h2>
+      </div>
+      <div class="register_sup">
+        <p>
+          Đăng ký nhận bản tin của Nike để cập nhật những sản phẩm mới, nhận
+          thông tin ưu đãi đặc biệt và thông tin giảm giá khác.
+        </p>
+      </div>
+      <form class="register_form">
+        <input
+          type="text"
+          placeholder="Nhập email của bạn"
+          class="form_input register_input"
+        />
+        <button class="register_button">Gửi</button>
+      </form>
+    </div>
+  </article>
+</main>

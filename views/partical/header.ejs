@@ -1,0 +1,39 @@
+<div class="freeship_banner">
+  <p>Miễn phí vận chuyển với tất cả đơn hàng</p>
+</div>
+<header class="header">
+  <div class="container">
+    <div class="header_logo">
+      <a href="/" class="header_logo--link">
+        <img src="/images/logo_nike.png" alt="" />
+      </a>
+    </div>
+
+    <nav class="header_bar">
+      <ul class="menu">
+        <li class="menu-item">
+          <a href="/" class="menu-link">Trang chủ</a>
+        </li>
+        <% for (c of loaiSp) { %>
+        <li class="menu-item">
+          <a href="/categories/<%= c.id %>" class="menu-link">
+            <%= c.name %>
+          </a>
+        </li>
+        <% } %>
+      </ul>
+    </nav>
+
+    <div class="header_panel">
+      <div class="panel_account panel">
+        <a href="#"><i class="fas fa-user"></i></a>
+      </div>
+      <div class="panel_find panel">
+        <a href="#"><i class="fas fa-search"></i></a>
+      </div>
+      <div class="panel_cart panel">
+        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+      </div>
+    </div>
+  </div>
+</header>
