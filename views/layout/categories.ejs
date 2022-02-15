@@ -4,17 +4,14 @@
       <a class="breadcumb_link" href="/"><span>Trang chủ</span></a>
 
       <span class="breadcumb_sup">/</span>
-      <% for(cate of nameCate) {%>
-      <a class="breadcumb_link" href="/categories/<%=cate.id%>"
-        ><span><%=cate.name%></span></a
-      >
-      <% } %>
+      <a class="breadcumb_link" href="/categories/<%=nameCateById.cate_id%>"
+        ><span> <%=nameCateById.cate_name%> </span>
+      </a>
     </div>
-    <h1><%=page_name%></h1>
     <div class="product_list">
-      <% for(sp of listSp) {%>
+      <% for(sp of listSpByCate) {%>
       <div class="product_item">
-        <span class="product_price--discount">-25%</span>
+        <span class="product_price--discount"></span>
         <div class="product_img">
           <a href="/product/<%=sp.id%>"
             ><img src="<%=sp.image%>" alt="<%=sp.name%>"

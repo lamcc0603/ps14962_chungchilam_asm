@@ -79,6 +79,7 @@
 .home {
   &_banner {
     height: 500px;
+    padding: 0 60px;
     border-radius: 8px;
     overflow: hidden;
 
@@ -122,6 +123,7 @@
   &_sup {
     display: block;
     margin-top: 20px;
+    font-size: 12px;
   }
 }
 

@@ -1,33 +1,21 @@
 <main class="product_container">
   <div class="container product_wrapper">
-    <% for (product of product) { %>
     <div class="breadcumb">
       <a class="breadcumb_link" href="/"><span>Trang chủ</span></a>
 
-      <span class="breadcumb_sup">/</span>
-      <% for(cate of nameCate) {%>
-      <a class="breadcumb_link" href="/categories/<%=cate.id%>"
-        ><span><%=cate.name%></span></a
-      >
-      <% } %>
-      <span class="breadcumb_sup">/</span>
+      <span class="breadcumb_sup"><%nameCateById.cate_name%>/</span>
 
-      <span class="breadcumb_sup"><%=product.name%></span>
+      <span class="breadcumb_sup"><%=sp.name%></span>
     </div>
-
     <article class="product">
       <div class="product_img br24">
-        <img src="<%=product.image%>" alt="<%=product.name%>" />
+        <img src="<%=sp.image%>" alt="<%=sp.name%>" />
       </div>
 
       <div class="product_info">
         <div class="product_info--title">
-          <h1><%=product.name%></h1>
-          <div class="product_info--categories">
-            <% for(cate of nameCate) {%>
-            <span><%=cate.name%></span>
-            <% } %>
-          </div>
+          <h1><%=sp.name%></h1>
+          <div class="product_info--categories"></div>
         </div>
 
         <div class="product_info--price">
@@ -35,13 +23,13 @@
             <span>-25%</span>
           </div>
           <div class="product_price main_price">
-            <span class=""><%=product.price%>đ</span
+            <span class=""><%=sp.price%>đ</span
             ><span class="text-gray">2,239,000đ</span>
           </div>
         </div>
 
         <div class="product_info--detail">
-          <p><%=product.detail%></p>
+          <p><%=sp.detail%></p>
         </div>
 
         <div class="product_info--count">
@@ -57,9 +45,9 @@
         </div>
       </div>
     </article>
-    <% } %>
   </div>
 </main>
+
 <div class="product_container">
   <div class="container product_wrapper">
     <div class="content_title">
@@ -70,7 +58,6 @@
     </div>
 
     <div class="product_list">
-      <% for(sp of listSp){%>
       <div class="product_item">
         <span class="product_price--discount">-25%</span>
         <div class="product_img">
@@ -84,7 +71,6 @@
           ><span class="text-gray">2,239,000đ</span>
         </div>
       </div>
-      <%}%>
     </div>
   </div>
 </div>

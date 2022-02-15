@@ -14,10 +14,10 @@
         <li class="menu-item">
           <a href="/" class="menu-link">Trang chủ</a>
         </li>
-        <% for (c of loaiSp) { %>
+        <% for (c of listCate) { %>
         <li class="menu-item">
-          <a href="/categories/<%= c.id %>" class="menu-link">
-            <%= c.name %>
+          <a href="/categories/<%= c.cate_id %>" class="menu-link">
+            <%= c.cate_name %>
           </a>
         </li>
         <% } %>

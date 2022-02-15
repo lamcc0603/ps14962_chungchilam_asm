@@ -11,26 +11,7 @@
           <span>Xem thêm</span>
         </a>
       </div>
-
-      <div class="product_list">
-        <% for(sp of listSp) {%>
-        <div class="product_item">
-          <span class="product_price--discount">-25%</span>
-          <div class="product_img">
-            <a href="/product/<%=sp.id%>"
-              ><img src="<%=sp.image%>" alt="<%=sp.name%>"
-            /></a>
-          </div>
-          <div class="product_name">
-            <a href="#"><p><%=sp.name%></p></a>
-          </div>
-          <div class="product_price">
-            <span class="text-red"><%=sp.price%>đ</span
-            ><span class="text-gray">2,239,000đ</span>
-          </div>
-        </div>
-        <% } %>
-      </div>
+      <div class="product_list"></div>
     </div>
   </article>
 
@@ -123,3 +104,50 @@
     </div>
   </article>
 </main>
+
+<script>
+  fetch("http://localhost:3000/productsnoibat")
+    .then(function (res) {
+      console.log(res); //xem thử trong console của trình duyệt nhé
+      if (!res.ok) {
+        throw new Error("Lỗi = " + res.status);
+      }
+      return res.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      const productListDiv = document.querySelector(".product_list");
+      let body = "";
+      data.forEach((data) => {
+        let str = `
+       <div class="product_item">
+           <span class="product_price--discount">${
+             data.giamgia == 0 ? `` : `-${data.giamgia}%`
+           }
+           </span>
+           <div class="product_img">
+             <a href="/product/${data.id}"
+               ><img src="${data.image}" alt="${data.name}"
+             /></a>
+           </div>
+           <div class="product_name">
+             <a href="#"><p>${data.name}</p></a>
+           </div>
+           <div class="product_price">
+             <span class="text-red">${
+               data.price -
+               parseFloat((Number(data.price) * Number(data.giamgia)) / 100)
+             } vnđ</span
+             ><span class="text-gray">${data.price}</span>
+           </div>
+  </div>
+         `;
+        body += str;
+      });
+
+      productListDiv.innerHTML = body;
+    })
+    .catch(function (error) {
+      console.log("Lỗi: ", error);
+    });
+</script>
